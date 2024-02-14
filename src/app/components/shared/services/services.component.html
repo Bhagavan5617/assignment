@@ -1,0 +1,65 @@
+
+<table>
+    <thead>
+        <th>S.No</th>
+        <th>Id</th>
+        <th> First Name</th>
+        <th> Last Name</th>
+        <th> Email</th>
+        <th> Phone</th>
+        <th>Adress</th>
+        <th>State</th>
+        <th> city</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userData; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.state }}</td>
+            <td>{{ user.city }}</td>
+            <td>
+                <div class="buttons">
+                    <button type="button" (click)="deleteUser(user.id)">Delete</button>
+                    <button type="button" (click)="updateUser(user.id)">Update</button>
+                </div>
+            </td>
+          </tr>
+    </tbody>
+</table>
+<div *ngIf="isPopupVisible" class="popup">
+    <div class="popup-content">
+        <form #updateForm="ngForm" (ngSubmit)="submit(updateForm.value)">
+            <label for="firstName">First Name: </label>
+            <input type="text" id="firstName" name="firstName" [(ngModel)]="userData.firstName" required>
+          
+            <label for="lastName">Last Name: </label>
+            <input type="text" id="lastName" name="lastName" [(ngModel)]="userData.lastName" required>
+          
+            <label for="address">Address: </label>
+            <input type="text" id="address" name="address" [(ngModel)]="userData.address" required>
+          
+            <label for="city">City: </label>
+            <input type="text" id="city" name="city" [(ngModel)]="userData.city" required>
+          
+            <label for="state">State: </label>
+            <input type="text" id="state" name="state" [(ngModel)]="userData.state" required>
+          
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" [(ngModel)]="userData.email" required>
+          
+            <label for="phone">Phone: </label>
+            <input type="text" id="phone" name="phone" [(ngModel)]="userData.phone" required>
+          
+          
+            <button type="submit">Update</button>
+          </form>
+    </div>
+  </div>
+
+  

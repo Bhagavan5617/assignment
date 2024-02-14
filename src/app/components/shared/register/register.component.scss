@@ -1,0 +1,48 @@
+table {
+  margin: auto;
+  margin-top: 10px;
+  width: 80%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid gray;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.search-bar {
+  margin-top: 10px;
+  margin-left: 150px;
+
+  input {
+    border-radius: 5px;
+  }
+}
+
+.pagination {
+  margin-left: 35%;
+  margin-bottom: 10px;
+  .active{
+    background: rgb(248, 197, 197);
+  }
+  button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    //background: linear-gradient(120deg, rgb(255, 0, 144), rgb(0, 255, 213) 55%, rgb(0, 222, 255), rgb(0, 222, 255) 45%);
+  }
+}

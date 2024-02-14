@@ -1,0 +1,103 @@
+.header {
+  padding: 10px;
+  background-color: azure;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    border-top: 2px solid #1D5558;
+    color: #1D5558;
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: inline-block;
+
+      .cart {
+        display: flex;
+        text-align: center;
+        align-items: center;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: #1D5558;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
+  select {
+    border: none;
+    outline: none;
+  }
+
+  &.app-light {
+    background-color: #f0f0f0;
+    color: #333;
+
+    select {
+      background-color: #f0f0f0;
+    }
+  }
+
+  &.app-dark {
+    background-color: #333;
+    color: white;
+
+    a {
+      color: white;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    select {
+      background-color: #333;
+      color: white;
+    }
+
+  }
+
+  &.app-blue {
+    background-color: azure;
+    color: darkslategrey;
+
+    select {
+      background-color: azure;
+    }
+  }
+
+  &.app-green {
+    background-color: #91e1b2;
+    color: #fff;
+
+    label {
+      color: black;
+    }
+
+    select {
+      background-color: #91e1b2;
+    }
+  }
+
+}

@@ -1,0 +1,25 @@
+.side-nav {
+    margin-top: 2px;
+    margin-right: 100px;
+    width: 7%;
+    background-color: azure;
+  
+    ul {
+      background-color: rgb(140, 239, 239);
+      list-style: none;
+      float: left;
+      margin: 0px;
+      padding: 0px;
+  
+      li {
+        padding: 10px;
+        align-items: center;
+  
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+  

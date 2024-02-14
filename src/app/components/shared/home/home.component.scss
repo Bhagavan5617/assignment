@@ -1,0 +1,56 @@
+.input{
+    display: flex;      
+    flex-direction:column;
+    width: 30%;
+    input{
+        margin-top: 10px;
+        margin-left: 5px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    button{
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    label{
+        margin-top: 10px;
+    }
+}
+.gameData{
+    display: flex;
+    flex-direction: row;
+}
+form{
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    input{
+        margin-top: 10px;
+        margin-left: 5px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    button{
+        margin-left: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    label{
+        margin-left: 10px;
+    }
+}
+.select-gameData{
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px; 
+}
+.select-list{
+    display: flex;
+}
+.button{
+    padding: 10px;
+    margin-left: 37%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}

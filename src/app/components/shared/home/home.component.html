@@ -1,0 +1,109 @@
+<!-- <div>
+    <div class="todo-list">
+        <h2>Todo List</h2>      
+        <ul>
+          <li *ngFor="let todo of todos;let i= index">          
+             {{todo}}
+            <button type="button" (click)="deleteTodo(i)">Delete</button>
+          </li>
+        </ul>   
+        <div>
+          <input [(ngModel)]="text"  placeholder="New Todo">
+          <button type="button" (click)="addTodo()">Add Todo</button>
+        </div>      
+    </div>
+</div>
+<p>parent works with {{message}}</p>
+<app-child [name1]="parentData" (customEvent)="recivedData($event)"></app-child>
+<div>
+  <div>
+    <button type="button" (click)="saveData()">Save Data</button>
+    <button type="button" (click)="loadData()"> Show Data</button>
+
+    <div>
+      <h1>{{session.id}}</h1>
+      <h2>{{session.name}}</h2>
+    </div>
+  </div> 
+</div> 
+ <table *ngIf="result">
+      <thead>
+        <th>No. List</th>
+        <th>winners Amount</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let winnersAmount of splitResult; let i; ">
+          <td> {{i+1}}</td>
+          <td>{{winnersAmount}}</td>
+        </tr>
+      </tbody>
+    </table>-->
+<div class="gameData">
+  <div class="input">
+    <label for="entries">Entries:</label>
+    <input title="entries" [(ngModel)]="gameData.entries">
+    <label for="sports">Spots:</label>
+    <input title="sports" [(ngModel)]="gameData.sports">
+    <label for="percentage">Percentage%: </label>
+    <input [(ngModel)]="gameData.percentage" placeholder="% Deduction">
+    <label for="winners">Winners:</label>
+    <input [(ngModel)]="gameData.winners" placeholder="Winners">
+    <button type="button" (click)="calculatedTotal()">Create Contest</button>
+  </div>
+  <div>
+    <ul *ngIf="result">
+      <li> Entries:{{gameData.entries}} </li>
+      <li> Spots:{{gameData.sports}} </li>
+      <li>Amount after % Deduction:{{amountAfterDeduction|number}} </li>
+      <li> Winners: {{gameData.winners}}</li>
+    </ul>
+  </div>
+</div>
+<div>
+  <div *ngIf="result">
+    <div>
+      <p>Max Prize pool:</p>
+      <p>{{amountAfterDeduction}}</p>
+    </div>
+    <p>TotalSpots: {{ totalSpots }}</p>
+
+    <p *ngFor="let splitResult of splitResult; let i=index;">
+      <span>winner {{i+1}}: </span>{{ splitResult }}
+    </p>
+  </div>
+</div>
+<div class="select-list">
+  <p>Select Option:</p>
+  <select class="select-gameData" title="select" [(ngModel)]="selecteOption">
+    <option value="select">--select--</option>
+    <option value="gameData">GameData</option>
+  </select>
+</div>
+
+
+<div *ngIf="selecteOption === 'gameData'">
+  <div *ngFor="let form of forms; let i=index">
+  <form>   
+      <label>Start:</label>
+      <input title="name" [(ngModel)]="form.start" name="start" />
+      <label>End:</label>
+      <input title="name" [(ngModel)]="form.end" name="end" />
+      <label>Amount:</label>
+      <input title="name" [(ngModel)]="form.amount" name="amount" (input)="subtractRemainingAmount(i)"   />
+      <label>Remaining:</label>
+      <input title="name"[(ngModel)]="RemainingAmountNew" name="remaining" readonly/>
+
+      <div *ngIf="RemainingAmountNew>0">
+      <button type="button" (click)="addAnotherForm()">Add </button> 
+    </div>
+      <div *ngIf="forms.length >= 2">
+        <button type="button" (click)="removeForm(i)">Remove</button> 
+      </div>
+      
+  </form>
+</div>
+ 
+ 
+  <button class="button" type="button" (click)="collectData()">Show Winners Amount</button>
+ 
+</div>

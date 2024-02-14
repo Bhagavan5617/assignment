@@ -1,0 +1,20 @@
+
+<div>
+    <form #formData="ngForm">
+        <label for="userfname">First Name: </label>
+        <input type="text" placeholder="first name" [(ngModel)]="UserData.firstName" id="user_fname" name="firstName" required>
+        <label for="userlname">Last Name: </label>
+        <input type="text" placeholder="last name" [(ngModel)]="UserData.lastName" id="lastName" name="lastName" required>
+        <label for="email">Adress: </label>
+        <input type="text" placeholder="Address" [(ngModel)]="UserData.adress" id="adress" name="address" required>
+        <label for="Phone">city : </label>
+        <input type="text" placeholder="City" [(ngModel)]="UserData.city" id="city" name="city" required>
+        <label for="state">State : </label>
+        <input type="text" placeholder="state" [(ngModel)]="UserData.state" id="state" name="state" required>
+        <label for="text">email : </label>
+        <input type="email" placeholder="Email" [(ngModel)]="UserData.email" id="email" name="email" required>
+        <label for="password">Phone : </label>
+        <input type="text" placeholder="Phone" [(ngModel)]="UserData.phone" id="pwd" name="phone" required>  
+        <button type="button"(click)="submit(formData.value)">Submit</button>
+    </form>
+</div>

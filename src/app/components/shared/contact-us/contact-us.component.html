@@ -1,0 +1,47 @@
+<div class="fom-container">
+    <form class="form" #userForm="ngForm">
+        <label for="name">*Name:</label>
+        <input type="text" [(ngModel)]="formData.name" placeholder="Name" id="name" name="name" required>
+        <label for="email">*Email:</label>
+        <input type="email" placeholder="Email" [(ngModel)]="formData.email" id="email" name="email" required>
+        <label for="number">*Number:</label>
+        <input type="text" placeholder="Number" [(ngModel)]="formData.number" id="number" name="number" required>
+        <label for="pincode">*Pincode:</label>
+        <input type="text" placeholder="Pincode" [(ngModel)]="formData.pincode" id="pincode" name="pincode" required>
+        <label for="state">State:</label>
+        <select [(ngModel)]="formData.state" name="state" id="state">
+            <option *ngFor="let state of Selectstate">{{ state.name }}</option>
+        </select>
+        <label for="country">Country:</label>
+        <select [(ngModel)]="formData.country" name="country" id="country">
+            <option *ngFor="let country of countries">{{ country.name }}</option>
+        </select>
+        <button type="button" (click)="submit()"> Submit</button>
+    </form>
+</div>
+<div>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Pincode</th>
+            <th>State</th>
+            <th>country</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of arrayOfTableData">
+                <td>{{data.name}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.number}}</td>
+                <td>{{data.pincode}}</td>
+                <td>{{data.state}}</td>
+                <td>{{data.country}}</td>
+                <td><i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,117 @@
+// src/app/todo-list/todo-list.component.scss
+
+.todo-list {
+  max-width: 400px;
+  margin: 0 auto;
+
+  h2 {
+    color: #333;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      button {
+        background-color: #dc3545;
+        border-radius: 5px;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  div {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    input {
+      flex-grow: 1;
+      padding: 5px;
+      border: 2px solid gray;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #28a745;
+      border-radius: 5px;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-card {
+  flex: 1 0 calc(33.33% - 20px);
+  margin: 10px;
+  max-width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 250px;
+  overflow: visible;
+
+  .product-image {
+    max-width: auto; 
+    height:150px;
+  }
+
+  .product-details {
+    margin-top: 10px;
+
+    .product-title {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .product-description {
+      margin-top: 5px;
+    }
+
+    .product-price {
+      margin-top: 10px;
+    }
+
+    .product-category {
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .product-rating {
+      margin-top: 10px;
+    }
+  }
+}
+
+
+
+

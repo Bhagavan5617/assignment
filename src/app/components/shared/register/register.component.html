@@ -1,0 +1,44 @@
+
+<div >
+    <div class="search-bar" >
+        <label>Search:
+            <input type="search" [(ngModel)]="searchText">
+        </label>
+        <label>
+            <input type="radio" name="filter" [(ngModel)]="filterBy" value="id"> Filter by ID
+        </label>
+        <label>
+            <input type="radio" name="filter" [(ngModel)]="filterBy" value="name"> Filter by Name
+        </label>
+    </div>
+    <div>
+        <table *ngIf="data.length > 0">
+            <thead>
+                <th>S.No</th>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>city</th>
+                <th>Adress</th>           
+            </thead>
+            <tbody>
+                <tr *ngFor="let apiData of filteredData(); let i=index">
+                    <td>{{calculateSerialNumber(i)}}</td>
+                    <td>{{apiData.user_id}}</td>
+                    <td>{{apiData.user_fname}}</td>
+                    <td>{{apiData.user_lname}}</td>
+                    <td>{{apiData.user_email}}</td>
+                    <td>{{apiData.user_phone}}</td>
+                    <td>{{apiData.user_password}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <button *ngFor="let page of getPagenationArray()" [class.active]="currentPage === page" (click)="onPageClick(page)">
+          {{ page }}
+        </button>
+      </div>
+
+    <!-- <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-pagination> -->

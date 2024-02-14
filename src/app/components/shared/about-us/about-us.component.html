@@ -1,0 +1,35 @@
+<div class="todo-list">
+  <h2>Todo List</h2>
+  <ul>
+    <li *ngFor="let todo of todos">
+      <input type="checkbox" placeholder="check ">
+      {{ todo.text }}
+      <button type="button" (click)="deleteTodo(todo.id)">Delete</button>
+    </li>
+  </ul> 
+  <div>
+    <input [(ngModel)]="newTodoText" placeholder="New Todo">
+    <button type="button" (click)="addTodo()">Add Todo</button>
+  </div>
+</div>
+<div>
+  <div class="products-list">
+    <div class="product-card" *ngFor="let product of products;let i=index">
+      <img [src]="product.image" alt="{{ product.title }}" class="product-image">
+      <div class="product-details">
+        <h2 class="product-title">{{ product.title }}</h2>
+        <p class="product-description">{{ product.description }}</p>
+        <p class="product-price">Price: {{ product.price| currency:'INR'}}</p>
+        <p class="product-category">Category: {{ product.category }}</p>
+        <div class="product-rating">
+          <p>Rating: {{ product.rating.rate }} ({{ product.rating.count }} reviews)</p>
+        </div>
+        <div>
+          <button type="button" (click)="addToCart(product)">Add to Cart</button>
+          <button type="button" (click)="deleteProduct(i)">Remove Product</button>         
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button"(click)="addProduct()" >Add Product</button>
+</div>
